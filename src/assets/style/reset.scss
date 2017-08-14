@@ -9,3 +9,14 @@ body {
     color: #666;
     font-size: 14px;
 }
+
+a {
+    text-decoration: none;
+    font-size: normal;
+    color: #5079d9;
+    cursor: pointer;
+    transition: all .15s ease-out;
+    &:hover {
+        color: #6b95ea;
+    }
+}
