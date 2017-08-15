@@ -26,6 +26,22 @@
 					</div>
 				</div>
 			</header>
+			<div class="nav-sub">
+				<div class="nav-sub-bg"></div>
+				<div class="nav-sub-wrapper">
+					<div class="w">
+						<ul class="nav-list">
+							<li>
+							  <router-link to="/">首页</router-link>
+							</li>
+							<li>
+							  <router-link to="/goods">全部商品</router-link>
+							</li>
+						</ul>
+						<div></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -93,6 +109,18 @@
 		.user {
 			margin-left: 41px;
 			width: 36px;
+			&:hover {
+			  a:before {
+			    background-position: -5px 0;
+			  }
+			  .nav-user-wrapper {
+			    top: 18px;
+			    visibility: visible;
+			    opacity: 1;
+			    -webkit-transition: opacity .15s ease-out;
+			    transition: opacity .15s ease-out;
+			  }
+			}
 			> a {
 				position: relative;
 				@include wh(36px, 20px);
@@ -167,6 +195,53 @@
 					background-image: linear-gradient(#A4A4A4, #909090);
 					box-shadow: inset 0 0 1px #838383, 0 1px 2px #838383;
 				}
+			}
+		}
+	}
+
+	.nav-sub {
+		position: relative;
+		height: 90px;
+		background: #f7f7f7;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .04);
+		.nav-sub-wrapper {
+			padding: 31px 0;
+			height: 90px;
+			position: relative;
+		}
+		.w {
+			display: flex;
+			justify-content: space-between;
+		}
+		.nav-list {
+			height: 28px;
+			line-height: 28px;
+			display: flex;
+			align-items: center;
+			li:first-child {
+				padding-left: 0;
+				a {
+					padding-left: 10px;
+				}
+			}
+			li {
+				float: left;
+				position: relative;
+				padding-left: 2px;
+				a {
+					display: block;
+					padding: 0 20px;
+					color: #666;
+				}
+			}
+			li:before {
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: 13px;
+				width: 2px;
+				height: 2px;
+				background: #bdbdbd;
 			}
 		}
 	}
