@@ -17,10 +17,49 @@
 						<div class="nav-aside">
 							<div class="user pr">
 								<router-link to="user">个人中心</router-link>
+								<!-- <div class="nav-user-wrapper pa">
+									<div class="nav-user-list">
+										<ul>
+											<li class="nav-user-avatar">
+												<div>
+													<span class="avatar" style="background-image: url('http://ouibvkb9c.bkt.clouddn.com/avatar/1502855989768.png');"></span>
+												</div>
+												<p class="name">陈二狗</p>
+											</li>
+											<li>
+												<router-link to="/user/orderList">我的订单</router-link>
+											</li>
+											<li>
+												<router-link to="/user/information">账号资料</router-link>
+											</li>
+											<li>
+												<router-link to="/user/addressList">收货地址</router-link>
+											</li>
+											<li>
+												<router-link to="/user/support">售后服务</router-link>
+											</li>
+											<li>
+												<router-link to="/user/coupon">我的优惠</router-link>
+											</li>
+
+											<li>
+												<a href="javascript:;" @click="_loginOut">退出</a>
+											</li>
+										</ul>
+									</div>
+								</div> -->
 							</div>
 							<div class="shop pr">
 								<router-link to="cart"></router-link>
 								<span class="cart-num"><i class="no">1</i></span>
+								<div class="nav-user-wrapper pa active">
+									<div class="nav-user-list">
+										<!-- <div class="full"></div> -->
+										<div class="cart-con">
+											<p>你的购物车竟然是空的!</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -51,6 +90,14 @@
 		name: 'app',
 		data () {
 			return {
+
+			}
+		},
+		computed: {
+			
+		},
+		methods: {
+			_loginOut () {
 
 			}
 		}
@@ -137,6 +184,64 @@
 					transition: none;
 				}
 			}
+			li + li {
+				text-align: center;
+				border-top: 1px solid #f5f5f5;
+				height: 44px;
+				line-height: 44px;
+				color: #616161;
+				font-size: 12px;
+				&:hover {
+					background: #fafafa;
+				}
+				a {
+					display: block;
+					color: #616161;
+				}
+			}
+			.nav-user-avatar {
+				> div {
+					position: relative;
+					@include wh(46px);
+					margin: 0 auto 8px;
+					text-align: center;
+					&:before {
+						content: ' ';
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						border-radius: 50%;
+						box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
+					}
+					.avatar {
+						@include wh(100%);
+						display: block;
+						background-repeat: no-repeat;
+						background-size: contain;
+						border-radius: 50%;
+					}
+				}
+				.name {
+					line-height: 1.5;
+					text-align: center;
+					margin-bottom: 16px;
+					font-size: 12px;
+					color: #757575;
+				}
+			}
+			.nav-user-wrapper {
+				width: 168px;
+				transform: translate(-50%);
+				left: 50%;
+			}
+			.nav-user-list {
+				width: 168px;
+				&:before {
+					left: 50%;
+				}
+			}
 		}
 		.shop {
 			position: relative;
@@ -195,6 +300,43 @@
 					background-image: linear-gradient(#A4A4A4, #909090);
 					box-shadow: inset 0 0 1px #838383, 0 1px 2px #838383;
 				}
+			}
+		}
+		.nav-user-wrapper {
+			right: 0;
+			width: 360px;
+			.nav-user-list {
+				&:before {
+					right: 34px;
+				}
+			}
+		}
+	}
+	//用户信息弹出
+	.nav-user-wrapper {
+		position: absolute;
+		padding-top: 18px;
+		// visibility: hidden;
+		// top: -3000px;
+		// opacity: 0;
+		z-index: 30;
+		.nav-user-list {
+			position: relative;
+			padding-top: 20px;
+			background: #fff;
+			border: 1px solid #d6d6d6;
+			border-color: rgba(0, 0, 0, .08);
+			border-radius: 8px;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+			z-index: 10;
+			&:before {
+				position: absolute;
+				content: ' ';
+				background: url(/static/images/account-icon@2x.32d87deb02b3d1c3cc5bcff0c26314ac.png) no-repeat -49px -43px;
+				background-size: 240px 107px;
+				@include wh(20px, 8px);
+				top: -8px;
+				margin-left: -10px;
 			}
 		}
 	}

@@ -6,6 +6,7 @@
 </template>
 
 <script>
+	import Vue from 'vue'
 	import YHeader from '/common/header'
 	export default {
 		name: 'app',
@@ -16,6 +17,12 @@
 		},
 		components: {
 			YHeader
+		},
+		methods: {
+
+		},
+		created () {
+			
 		}
 	}
 </script>
