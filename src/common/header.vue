@@ -55,7 +55,7 @@
 								<div class="nav-user-wrapper pa active">
 									<div class="nav-user-list">
 										<!-- <div class="full"></div> -->
-										<div class="cart-con">
+										<div class="cart-con" style="height: 313px;text-align: center">
 											<p>你的购物车竟然是空的!</p>
 										</div>
 									</div>
@@ -90,11 +90,9 @@
 		name: 'app',
 		data () {
 			return {
-
 			}
 		},
 		computed: {
-			
 		},
 		methods: {
 			_loginOut () {
@@ -385,6 +383,27 @@
 				height: 2px;
 				background: #bdbdbd;
 			}
+		}
+	}
+
+	.cart-con {
+		text-align: center;
+		position: relative;
+		p {
+			padding-top: 185px;
+			color: #333333;
+			font-size: 16px;
+		}
+		&:before {
+			content: ' ';
+			position: absolute;
+			transform: translate(-50%, -70%);
+			width: 76px;
+			height: 62px;
+			left: 50%;
+			top: 50%;
+			background: url("/static/images/cart-empty-new.png") no-repeat;
+			background-size: cover;
 		}
 	}
 </style>
